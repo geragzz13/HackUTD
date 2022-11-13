@@ -1,0 +1,30 @@
+import logo from './logo.svg';
+import './App.css';
+
+const fs = eval(require("fs"));
+
+function RetreiveData(FileName){
+  const Content= fs.readFile(FileName, {encoding: "utf-8", flag: "r"}, function(Error, Data){
+    if (Error){
+      console.log(Error);
+    }
+    else{
+      const ContentArray= Content.split(/\r?\n/);
+      
+      console.log(ContentArray);
+    }
+  });
+}
+
+function App() {
+  //for(var Number= 1; Number <= 20; Number++){
+    //RetreiveData("./Asteroids/Asteroid " + Number);
+  //}
+  RetreiveData("../Asteroids/Asteroid 1");
+
+  return (
+    <h1>Hello World</h1>
+  );
+}
+
+export default App;
